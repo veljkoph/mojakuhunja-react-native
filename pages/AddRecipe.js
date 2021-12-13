@@ -45,71 +45,9 @@ const AddRecipe = ({ navigation }) => {
     })();
   }, []);
 
-  // const pickImage = async () => {
-  //   let result = await ImagePicker.launchImageLibraryAsync({
-  //     mediaTypes: ImagePicker.MediaTypeOptions.Images,
-  //     allowsEditing: true,
-  //     aspect: [16, 9],
-  //     quality: 0.5,
-  //   });
-  //   if (!result.cancelled) {
-  //     setRecipe({
-  //       ...recipe,
-  //       image: { type: result.type, uri: result.uri, name: "namename" },
-  //     });
-  //   }
-  // };
-
   const categories = ["All", "Pasta", "Pizza"];
   const time = [15, 20, 30, 45, 60, 75, 90, 120];
   const { user } = React.useContext(AuthContext);
-
-  // const postRecipe = () => {
-  //   if (
-  //     recipe.title !== "" &&
-  //     recipe.descr !== "" &&
-  //     recipe.ingridients !== "" &&
-  //     recipe.image !== "" &&
-  //     recipe.tags &&
-  //     user
-  //   ) {
-  //     const formData = new FormData();
-  //     formData.append("file", recipe.image);
-  //     formData.append("upload_preset", "nn3hthax");
-  //     formData.append("cloud_name", "veljkoph");
-
-  //     axios
-  //       .post(`https://api.cloudinary.com/v1_1/veljkoph/image/upload`, formData)
-  //       .then((response) => {
-  //         axios
-  //           .post("https://mojakuhinja.herokuapp.com/recipe/add", {
-  //             userTitle: recipe.title,
-  //             userDescr: recipe.descr,
-  //             userIngridients: recipe.ingridients,
-  //             userImage: response.data.url,
-  //             userCategory: recipe.category,
-  //             userTime: recipe.time,
-  //             userTags: recipe.tags,
-  //             userID: user.id,
-  //           })
-  //           .then(() => {
-  //             setMessage("Uspesno dodato");
-  //           });
-  //       });
-
-  //     setRecipe({
-  //       title: "",
-  //       descr: "",
-  //       ingridients: "",
-  //       image: "",
-  //       category: "",
-  //       tags: "",
-  //       time: "",
-  //     });
-  //   } else {
-  //     setMessage("Morate popuniti sva polja");
-  //   }
-  // };
 
   const postRecipe = async () => {
     if (
